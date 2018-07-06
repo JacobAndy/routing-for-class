@@ -30,15 +30,11 @@ class Home extends Component {
       ]
     };
   }
-  // componentDidMount() {
-  //   axios.get("/api/get-me-products").then(response => {
-  //     this.setState({ products: response.data });
-  //   });
-  // }
+
   render() {
     let mappedProducts = this.state.products.map((e, i) => {
       return (
-        <Link key={i} to={`/shop/${e.item}/${e.price}/${e.description}`}>
+        <Link key={i} to={`/shop/${e.item}`}>
           <div className="product-container">
             <h1>{e.item}</h1>
           </div>

@@ -1,16 +1,40 @@
 import React, { Component } from "react";
-
+let products = [
+  {
+    item: "Vans",
+    price: 46,
+    description: "These shoes were worn by Bam Margera"
+  },
+  {
+    item: "Levis",
+    price: 55,
+    description: "Levis will last you a lifetime"
+  },
+  {
+    item: "White tee",
+    price: 5,
+    description: "When you dont know what to wear, pick a whte tee"
+  }
+];
 class Product extends Component {
   constructor() {
     super();
   }
   render() {
-    console.log(this.props.match);
+    let product =
+      products.find(c => c.item === this.props.match.params.name) || false;
+
     return (
       <div>
-        <h1>{this.props.match.params.product}</h1>
-        <h2>${this.props.match.params.price}.00</h2>
-        <h3>{this.props.match.params.itemDescription}</h3>
+        {product ? (
+          <div>
+            <h1>{product.item}</h1>
+            <h2>${product.price}.00</h2>
+            <h3>{product.description}</h3>
+          </div>
+        ) : (
+          <h1>Sorry, item not found</h1>
+        )}
       </div>
     );
   }
