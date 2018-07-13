@@ -9,3 +9,28 @@ export default (
     <Route path="/shop/:name" component={Product} />
   </Switch>
 );
+/*
+
+
+//////////////////////
+//STATEFUL COMPONENT//
+//////////////////////
+
+THIS.PROPS.MATCH.PARAMS={name: **WHATEVER YOU GIVE IT**}
+
+
+//////////////////////
+//FUNCTIONAL COMPONENT//
+//////////////////////
+
+PROPS.MATCH.PARAMS={name: **WHATEVER YOU GIVE IT**}
+
+
+EI
+
+
+HTTP://LOCALHOST:3000/SHOP/VANS
+
+<INSIDE OF PRODUCT COMPONENT>
+THIS.PROPS.MATCH.PARAMS.NAME=VANS
+*/

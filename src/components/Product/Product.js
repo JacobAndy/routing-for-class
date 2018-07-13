@@ -24,7 +24,7 @@ class Product extends Component {
     };
   }
   render() {
-    console.log(this.props.match);
+    console.log(this.props);
     let product =
       this.state.products.find(c => c.item === this.props.match.params.name) ||
       false;
